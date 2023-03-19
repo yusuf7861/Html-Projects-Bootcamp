@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List sticky Section</title>
+    <style>
+        .container
+        {
+            display: grid;
+            place-items: center;
+            min-height: 400px;
+        }
+        
+        .sticky-stack 
+        {
+            /* padding: 20px; */
+            background-color: #37474f;
+            border-radius: 1rem;
+            margin: 0;
+            color: white;
+            height: 320px;
+            overflow-y: auto;
+        }
+
+        .sticky-stack dt
+        {
+            position: sticky;
+            top: 0;
+            font-weight: bold;
+            background: #263238;
+            padding: 0.25rem 1rem;
+        }
+
+        .sticky-stack dd 
+        {
+            margin: 0;
+            padding: 0.75rem 1rem;
+        }
+
+        .sticky-stack dd + dt 
+        {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <dl class="sticky-stack">
+            <dt>A</dt>
+            <dd>Algeria</dd>
+            <dd>Angola</dd>
+            <dd>Australia</dd>
+
+            <dt>B</dt>
+            <dd>Benin</dd>
+            <dd>Botswana</dd>
+            <dd>Burkina Faso</dd>
+            <dd>Brunei</dd>
+            <dd>Brundi</dd>
+
+            <dt>C</dt>
+            <dd>Cabo Verde</dd>
+            <dd>Cameroon</dd>
+            <dd>Central African Republic</dd>
+            <dd>Congo, Democratic Republic of Congo</dd>
+
+            <dt>D</dt>
+            <dd>Djibouti</dd>
+
+            <dt>E</dt>
+            <dd>Egypt</dd>
+            <dd>Equitorial Guinea</dd>
+            <dd>Ethopia</dd>
+        </dl>
+    </div>
+</body>
+</html>

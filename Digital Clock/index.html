@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            background: url(./images/bg.jpg);
+            /* background: url(https://i.postimg.cc/KvbWccLv/bg.jpg); */
+            background-position: center;
+            background-size: cover;
+        }
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 2rem;
+            color: white;
+        }
+        .clock {
+            display: flex;
+
+        }
+
+        .clock div {
+            margin: 5px;
+
+        }
+
+        .clock span {
+            width: 100px;
+            height: 80px;
+            background-color: slateblue;
+            opacity: .8;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: sans-serif;
+        }
+
+        .clock .text {
+            height: 30px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-color: darkblue;
+            opacity: .8;
+        }
+
+        .clock #ampm {
+            position: absolute;
+            bottom: 35%;
+            letter-spacing: 2px;
+            background-color: darkblue;
+            width: 60px;
+            margin-top: 5px;
+            height: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Digital Clock
+    </h2>
+    <div class="clock">
+        <div>
+            <span id="date">00</span>
+            <span class="text">Date</span>
+        </div>
+        <div>
+            <span id="day">00</span>
+            <span class="text">Day</span>
+        </div>
+        <div>
+            <span id="hour">00</span>
+            <span class="text">Hours</span>
+        </div>
+        <div>
+            <span id="minute">00</span>
+            <span class="text">Minutes</span>
+        </div>
+        <div>
+            <span id="second">00</span>
+            <span class="text">Seconds</span>
+        </div>
+        <div>
+            <span id="ampm">AM</span>
+        </div>
+    </div>
+
+    <script>
+        const clock_date = document.getElementById("date");
+        const clock_day = document.getElementById("day");
+        const clock_hour = document.getElementById("hour");
+        const clock_minute = document.getElementById("minute");
+        const clock_second = document.getElementById("second");
+        const clock_ampm = document.getElementById("ampm");
+
+        function updateClock() {
+            let d = new Date().getDate()
+            let day = new Date().getDay()
+            let h = new Date().getHours()
+            let m = new Date().getMinutes()
+            let s = new Date().getSeconds()
+            let ampm = "AM";
+
+            // AM PM if statement
+            if ( h > 12) {
+                h = h - 12
+                ampm = "PM"
+            }
+            if ( h > 12) {
+                ampm = "PM"
+            }
+
+            // specify Day bcz Javascript show days in integer
+            if ( day == 1) {
+                day = "MON";
+            }
+            if ( day == 2) {
+                day = "TUE";
+            }
+            if ( day == 3) {
+                day = "WED";
+            }
+            if ( day == 4) {
+                day = "THU";
+            }
+
+            if ( day == 5) {
+                day = "FRI";
+            }
+            if ( day == 6) {
+                day = "SAT";
+            }
+            if ( day == 0) {
+                day = "SUN";
+            }
+
+            // To write a 0 at of the number when it is less than 10
+            h = h < 10 ? "0" + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+
+            clock_date.innerText = d;
+            clock_day.innerText = day;
+            clock_hour.innerText = h;
+            clock_minute.innerText = m;
+            clock_second.innerText = s;
+            clock_ampm.innerText = ampm;
+
+            setTimeout( () => {
+                updateClock()
+            }, 1000)
+        }
+
+        updateClock()
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=League+Spartan:wght@200;400&family=Open+Sans:wght@300&family=Poppins:wght@300;400;500;600;700&family=Ubuntu&family=Ubuntu+Condensed&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(https://unsplash.com/collections/10532874/aereal);
+}
+
+.container
+{
+    display: flex;
+    align-items: center;
+    row-gap: 15px;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container .image
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: rotate(180deg);
+    z-index: -1;
+    filter: brightness(70%); 
+}
+
+.container header
+{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.container p
+{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.container .time_content
+{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.time_content .time
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.time .number,
+.time .text 
+{
+    font-weight: 500;
+    color: #fff;
+}
+
+.time .number 
+{
+    font-size: 40px;
+}
+
+.time .text 
+{
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.email-content
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.email-content p{
+    font-size: 13px;
+}
+
+.input-box
+{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    max-width: 360px;
+    width: 100%;
+    margin-top: 10px;
+    column-gap: 20px;
+}
+
+.input-box input,
+.input-box button
+{
+    height: 100%;
+    outline: none;
+    border: none;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    font-weight: 400;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.input-box input 
+{
+    width: 100%;
+    padding: 0 15px;
+    color: #fff;
+}
+input::placeholder
+{
+    color: #fff;
+}
+
+.input-box button
+{
+    cursor: pointer;
+    /* width: 30%; */
+    color: #fff;
+    white-space: nowrap;
+    padding: 0 20px;
+    transition: all 0.4s ease;
+}
+.input-box button:hover
+{
+    color: #0d6a81;
+    background-color: #fff;
+}

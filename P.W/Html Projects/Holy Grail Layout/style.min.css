@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #BBC2CE;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    background-color: #f3f5f9;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d4d5dc;
+    padding: 1em;
+}
+
+.logo-wordmark {
+    color: #232e33;
+    font-style: italic;
+    background-color: #fff;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.sidebar {
+    flex: 0 0 20%;
+    background-color: #fff;
+    border-right: 1px solid #d4d5dc;
+}
+
+.sidebar_links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_link {
+    display: block;
+    color: inherit;
+    margin: 0;
+    text-decoration: none;
+    padding: 1em;
+    border-bottom: 1px solid #d4d5dc;
+    transition: background-color 300ms;
+}
+
+.sidebar_link:hover {
+    color: #2ec79f;
+    background-color: #f8f8fc;
+}
+
+.sponsors {
+    flex: 0 0 10%;
+    flex-grow: 0;
+    background-color: #fff;
+    padding: 1em;
+    border-left: 1px soid #d4d5dc;
+}
+
+.sponsor {
+    border: 2px solid #ebedee;
+    padding: 2em 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.posts {
+    flex-grow: 1;
+    padding: 1em;
+}
+
+.post {
+    margin: 0 auto;
+    max-width: 500px;
+    background-color: #ffffff;
+    border: 1px solid #ebedee;
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.post_title {
+    color: #2ec79f;
+    margin: 0 0 1em 0;
+    font-weight: 500;
+}
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 1em;
+    font-size: 0.8em;
+}
+
+.footer_links {
+    text-align: center;
+}
+
+.footer_links p:nth-last-child(2) {
+    color: green;
+    font-weight: 500;
+}
+
+.footer_links p:nth-last-child(1) {
+    color: #2ec79f;
+    font-size: 1rem;
+}

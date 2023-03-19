@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar_Hover_&_focus_Effect</title>
+    <style>
+        .hover-nav ul
+        {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .hover-nav li 
+        {
+            float: left;
+        }
+        .hover-nav li a 
+        {
+            position: relative;
+            display: block;
+            color: #000;
+            text-align: center;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 8px 15px;
+            text-decoration: none;
+            z-index: 0;
+        }
+        li a:before 
+        {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: #2883f6;
+            border-radius: 20px;
+            z-index: -1;
+            transform: scale(0);
+            transition: transform 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.83);
+        }
+        li a:hover:before,
+        li a:focus:before 
+        {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <navbar class="hover-nav">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </navbar>
+</body>
+</html>

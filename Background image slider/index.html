@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Background Image Slider</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .bg-img {
+            width: 100%;
+            height: 100vh;
+            background: url("./images/holographic-iron-man-mkiv-nc-1366x768.jpg");
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+
+        .container {
+            padding: 100px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            color: gray;
+        }
+
+        @media (max-width: 448px) {
+            .container {
+                padding: 10px;
+            }
+
+            .bg-img {
+                background-size: 250%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-img" id="bg-img"></div>
+    <div class="container">
+        <h1>Welcome to our Website</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti magni harum fuga commodi sunt in nulla
+            tenetur similique quis numquam fugit, impedit sit! Impedit sed, nisi debitis sapiente consequatur neque ex
+            saepe asperiores odio labore itaque voluptates delectus commodi cupiditate optio, tenetur laboriosam
+            consequuntur numquam laborum aliquid totam ratione voluptatibus quod. Repudiandae nam, voluptatibus dicta,
+            enim eius pariatur quaerat, cupiditate impedit non deleniti sed vero beatae perspiciatis? </p>
+        <p> Ea reprehenderit tenetur quo inventore praesentium obcaecati vel dignissimos iste nostrum consectetur. Quasi
+            veniam ducimus vitae quas numquam, molestiae quo consequatur dolorem ut corporis adipisci, delectus vero!
+            Tempore aperiam iusto necessitatibus molestiae beatae magni quisquam, vel quod? Repudiandae quaerat quo eius
+            laborum nisi earum recusandae? Corporis deserunt quidem excepturi fuga eveniet earum eius natus, quibusdam
+            nam distinctio voluptatem, sed facilis debitis, ut commodi reiciendis? Harum culpa mollitia est consectetur
+            explicabo fuga dignissimos corrupti beatae aperiam esse hic magni </p>
+        <p>
+            adipisci quas eligendi sunt amet nulla, id similique doloremque. Fugit quibusdam provident laudantium
+            corrupti cumque saepe dignissimos error assumenda libero totam laborum voluptates tenetur placeat, nostrum
+            quisquam praesentium rem ea enim magni hic vitae? Eligendi tempora quasi unde quia aperiam, quaerat nesciunt
+            quos dolorem saepe minima dolor sit, id vel sapiente esse odit velit deleniti. Lorem ipsum dolor, sit amet
+            consectetur adipisicing
+        </p>
+        <p> elit. Minima culpa praesentium nesciunt eum ullam sapiente libero odio, et, adipisci, reprehenderit
+            asperiores. Adipisci ut minima corporis repudiandae, corrupti consequatur similique, neque in alias quaerat
+            dignissimos beatae, repellat dolorum. Consequuntur ab beatae tempore animi, sunt reprehenderit distinctio
+            iure
+            ad tempora vero corporis exercitationem voluptates dolor, error neque obcaecati. Rerum, dolores soluta.
+            Dolores
+            voluptate minus fuga, quod voluptates corrupti, est voluptatibus a perferendis quibusdam enim, in reiciendis
+            delectus nisi deserunt voluptas qui! Doloremque quasi doloribus, perspiciatis praesentium eos incidunt nobis
+            inventore. Molestiae hic laborum nisi pariatur tenetur, quod explicabo labore cum consectetur rem.</p>
+    </div>
+
+    <script>
+        const bg_image = document.getElementById("bg-img");
+
+        window.addEventListener("scroll", () => {
+            updateImage()
+        })
+
+        function updateImage() {
+            bg_image.style.opacity = 1 - window.pageYOffset / 800;
+            bg_image.style.backgroundSize = 160 - window.pageYOffset / 12 + "%"
+        }
+    </script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

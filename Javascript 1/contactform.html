@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: serif;
+        }
+        body {
+            /* background-color: #f2f2f2; */
+            background-color: #BDC3c7;
+        }
+        .container {
+            padding: 3rem;
+            height: 500px;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+        }
+
+        form,h1 {
+            text-align: center;
+        }
+
+        input {
+            outline: none;
+            /* text-align: center; */
+            padding: 0.3rem;
+            border-radius: 10px;
+            border-color: rgb(18, 59, 1);
+        }
+
+        input::placeholder {
+            padding: 1rem;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h1>
+            Contact Form
+        </h1>
+        <form action="mailto:yjamal710@gmail.com" method="post" enctype="multipart/form-data">
+            <legend> <br>
+                First-Name:
+            </legend> 
+                <input type="text" placeholder="Yusuf" required> 
+            <legend> <br>
+                Last-Name:
+            </legend> 
+                <input type="text" placeholder="Siddique"> 
+            <legend> <br>
+                Mobile Number:
+            </legend>  
+                <input type="number" placeholder="123456789" required> 
+            <legend> <br>
+                Email:
+            </legend> 
+                <input type="email" placeholder="abc123@gmail.com" required> <br> <br>
+            <Button type="submit" name="submit" value="submit">Submit</Button>
+            <Button type="reset">Reset</Button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Rotating_Navigation_Animation</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* font lato */
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #333;
+            color: #222;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fafafa;
+            margin: 0;
+            transform-origin: top left;
+            transition: transform 0.5s linear;
+            width: 100vw;
+            min-height: 100vh;
+            padding: 50px;
+            padding-top: 0;
+        }
+
+        .container.show-nav {
+            transform: rotate(-20deg);
+        }
+
+        .circle-container {
+            position: fixed;
+            top: -100px;
+            left: -100px;
+        }
+
+        .circle {
+            background-color: #ff7979;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.5s linear;
+        }
+
+        .container.show-nav .circle {
+            transform: rotate(-70deg);
+        }
+
+        .circle button {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            background: transparent;
+            border: none;
+            font-style: 26px;
+            color: #fff;
+        }
+
+        .circle button:focus {
+            outline: none;
+        }
+
+        .circle button#open {
+            left: 60%;
+        }
+
+        .circle button#close {
+            top: 60%;
+            transform: rotate(90deg);
+            transform-origin: top left;
+        }
+
+        .container.show-nav+nav li {
+            transform: translateX(0);
+            transition-delay: 0.3s;
+        }
+
+        nav {
+            position: fixed;
+            bottom: 40px;
+            left: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        nav ul li {
+            text-transform: uppercase;
+            color: #fff;
+            margin: 40px 0;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease-in;
+        }
+
+        nav ul li i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        nav ul li+li {
+            margin-left: 15px;
+            transform: translateX(-150%);
+        }
+
+        nav ul li+li+li {
+            margin-left: 30px;
+            transform: translateX(-200%);
+        }
+
+        nav a {
+            color: #fafafa;
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+
+        nav a:hover {
+            color: #ff7979;
+            font-weight: bold;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .content h1 {
+            margin: 0;
+        }
+
+        .content small {
+            color: #555;
+            font-style: italic;
+        }
+
+        .content p {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .wish .wishes {
+            text-align: center;
+            padding-top: 50px;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .content img {
+                width: 300px;
+            }
+
+            .container {
+                padding: 20px;
+                padding-top: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close">
+                    <i class="fa-solid fa-xmark fa-2x"></i>
+                </button>
+                <button id="open">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                </button>
+            </div>
+        </div>
+        <div class="wish">
+            <p class="wishes">
+                I am proud to be Indian and I wish all the Indians a Happy Independence Day!
+            </p>
+        </div>
+        <div style="text-align: center; color: green">
+            <p> Made by <b style="color: red; letter-spacing: 2px;"> Yusuf Jamal </b></p>
+        </div>
+
+        <div class="content">
+            <h1>Independence Day(India)</h1>
+            <small>15 Aug 1947</small>
+            <img src="https://images.unsplash.com/photo-1597058712635-3182d1eacc1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZmxhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt="Indian flag">
+            <p>Independence Day is celebrated annually on 15 August as a national holiday in India commemorating the
+                nation's independence from the United Kingdom on 15 August 1947, the day when the provisions of the 1947
+                Indian Independence Act, which transferred legislative sovereignty to the Indian Constituent Assembly,
+                came into effect. India retained King George VI as head of state until its transition to a republic,
+                when the Constitution of India came info effect on 26 January 1950 (celebrated as Indian Republic Day)
+                and replaced the dominion prefix, Dominion of India, with the enactment of the sovereign law
+                Constitution of India. India attained independence following the Independence Movement noted for largely
+                non-violent resistance and civil disobedience.
+
+                Independence coincided with the partition of India, in which British India was divided along religious
+                lines into the Dominions of India and Pakistan; the partition was accompanied by violent riots and mass
+                casualties, and the displacement of nearly 15 million people due to religious violence. On 15 August
+                1947, the first Prime Minister of India, Jawaharlal Nehru raised the Indian national flag above the
+                Lahori Gate of the Red Fort in Delhi. On each subsequent Independence Day, the incumbent Prime Minister
+                customarily raises the flag and gives an address to the nation.[1] The entire event is broadcast by
+                Doordarshan, India's national broadcaster, and usually begins with the shehnai music of Ustad Bismillah
+                Khan. Independence Day is observed throughout India with flag-hoisting ceremonies, parades and cultural
+                events. It is a national holiday.</p>
+            <hr color="black">
+
+            <h3>History of India</h3>
+            <img src="https://images.unsplash.com/photo-1600093112291-7b553e3fcb82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwZmxhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt="Indian flag">
+            <p> <b style="font-size: 20px;">I</b>ndia, officially the Republic of India (Hindi: Bhārat Gaṇarājya), is a
+                country in South Asia. It is the seventh-largest country by area, the second-most populous country, and
+                the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on
+                the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west;
+                China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean,
+                India is in the vicinity of Sri Lanka and the Maldives; its Andaman and Nicobar Islands share a maritime
+                border with Thailand, Myanmar and Indonesia.
+                <b style="font-size: 20px;">M</b>odern humans arrived on the Indian subcontinent from Africa no later
+                than 55,000 years ago. Their long occupation, initially in varying forms of isolation as
+                hunter-gatherers, has made the region highly diverse, second only to Africa in human genetic
+                diversity.Settled life emerged on the subcontinent in the western margins of the Indus river basin 9,000
+                years ago, evolving gradually into the Indus Valley civilization of the third millennium BCE. By 1200
+                BCE, an archaic form of Sanskrit, an Indo-European language, had diffused into India from the northwest,
+                unfolding as the language of the Rigveda, and recording the dawning of Hinduism in India.The Dravidian
+                languages of India were supplanted in the northern and western regions. By 400 BCE, stratification and
+                exclusion by caste had emerged within Hinduism, and Buddhism and Jainism had arisen, proclaiming social
+                orders unlinked to heredity. Early political consolidations gave rise to the loose-knit Maurya and Gupta
+                Empires based in the Ganges Basin. Their collective era was suffused with wide-ranging creativity, but
+                also marked by the declining status of women, and the incorporation of untouchability into an organized
+                system of belief. In South India, the Middle kingdoms exported Dravidian-languages scripts and religious
+                cultures to the kingdoms of Southeast Asia.
+            </p>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><i class="fa-solid fa-house"></i><a href="#">Home</a></li>
+            <li><i class="fa-solid fa-user"></i><a href="https://instagram.com/siddique.raaj/">About</a></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:yjamal710@gmail.com">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <script>
+        const open = document.getElementById("open");
+        const close = document.getElementById("close");
+        const container = document.querySelector(".container");
+
+        open.addEventListener("click", () => {
+            container.classList.add("show-nav");
+        })
+
+        close.addEventListener("click", () => {
+            container.classList.remove("show-nav");
+        })
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.signup {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.signup_input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px;
+    min-width: 200px;
+}
+
+.signup_input-wrapper {
+    margin-bottom: 8px;
+}
+
+.signup_button {
+    padding: 10px 20px;
+    font-size: inherit;
+    border: none;
+    border-radius: 3px;
+    background-color: #2980b9;
+    color: #fff;
+    cursor: pointer;
+}
+
+.signup_button:disabled {
+    opacity: 0.5;
+}
+
+/* align label on top of the input area */
+.signup_label {
+    display: block;
+}
+
+.signup_errors {
+    color: tomato;
+}

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Anaheim&family=Poppins:wght@800&family=Ubuntu&display=swap');
+
+body {
+    font-family: 'Anaheim';
+    font-size: 1.2em;
+}
+
+#outside {
+    background-color: lightgoldenrodyellow;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    /* border: 1px solid grey; */
+}
+
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+form {
+    /* just to center the form on the page */
+    margin: 0 auto;
+    width: 70%; 
+    /* to see the limits of the form */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+
+}
+
+fieldset {
+    border: 1px solid lightgrey;
+    margin: 10px;
+    background-color: #fff;
+    /* border-radius: 11px; */
+}
+
+legend {
+    font-weight: 700;
+}
+
+#number {
+    width: 150px;
+}
+
+div + div {
+    margin-top: 1em;
+}
+
+/*label {
+    to male sure that all label have the size and are properly align 
+     display: inline-block;
+    width: 80px;
+    text-align: right;
+} */
+
+#survey-form {
+    margin: 10px auto;
+    background-color: #fff;
+}
+
+input, textarea {
+    /* to make sure that all text field have the same font settings By default, textarea are set with a monospace font */
+    /* font: 1em sans-serif; */
+
+    /* -moz-box-sizing: border-box;
+    box-sizing: border-box; */
+
+    /*  To harmonize the look & feel of text field border */
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    /* To give a little highlight on active elements */
+    border-color: orangered;
+}
+
+textarea {
+    /* To properly align multi-line text field with their label */
+    vertical-align: top;
+
+    /* To give enough room type some text areas */
+    height: 5em;
+}
+
+button {
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    margin: auto; /* To align button on center  */
+    padding: 10px 20px 10px;
+}
+
+button:hover {
+    cursor : pointer;
+}
